@@ -1,13 +1,14 @@
-import { StackActions, NavigationAction } from "react-navigation";
+import { StackActions, NavigationActions } from "react-navigation";
 import { connect } from "react-redux";
 
 const PreLoad = (props) => {
+
     // Temporário
-    props.navigation.dispath(StackActions.reset({
+    props.navigation.dispatch(StackActions.reset({
         index: 0,
         actions: [
-            NavigationAction.navigation({ routeName: 'StarterStack' })
-        ]
+            NavigationActions.navigate({ routeName: 'StarterStack' })
+        ],
     }));
 
     /* if (!props.name) {
@@ -35,7 +36,7 @@ const PreLoad = (props) => {
 const mapStateToProps = (state) => {
     return {
         name: state.userReducer.name
-    }
+    };
 }
 
 export default connect(mapStateToProps)(PreLoad);

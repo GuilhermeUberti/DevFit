@@ -12,7 +12,7 @@ const MainStack = createStackNavigator({
 }, {
     initialRouteName: 'PreLoad',
     defaultNavigationOptions: {
-        header: null
+        headerShown: false
     }
 });
 

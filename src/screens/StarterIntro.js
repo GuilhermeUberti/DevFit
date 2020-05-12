@@ -7,7 +7,7 @@ const Container = styled.SafeAreaView`
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: "#FFF;
+    background-color: #FFF;
     margin-left: 30px;
     margin-right: 30px;
 `;
@@ -55,7 +55,7 @@ const Page = (props) => {
     );
 }
 
-Page.navigaitonOptions = {
+Page.navigationOptions = {
     header: null
 }
 

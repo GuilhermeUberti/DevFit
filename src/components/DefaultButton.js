@@ -6,5 +6,5 @@ export default styled.TouchableHighlight`
     padding: 10px 20px;
     border-radius: 100px;
     justify-content: center;
-    align-items: centet;
+    align-items: center;
 `;
