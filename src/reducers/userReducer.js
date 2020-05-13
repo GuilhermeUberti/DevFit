@@ -1,16 +1,19 @@
 const initialState = {
     name: '',
     level: '', // beginner, intermediate, advanced
-    workoutDays: [], // dia 01 ao 0
+    workoutDays: [], // 0 - 6 (Semana começa no Domingo)
     myWorkouts: [],
     lastWorkout: '', // ID
     dailyProgress: ['2019-09-13', '2019-09-12']
 };
 
 export default (state = initialState, action) => {
-    switch(action.name) {
-        case 'SET_NAME': 
-            return {...state, name:action.payload.name};
+    switch (action.type) {
+        case 'SET_NAME':
+            return { ...state, name: action.payload.name };
+            break;
+        case 'SET_WORKOUTDAYS':
+            return { ...state, workoutDays: action.payload.workoutDays };
             break;
     }
 
