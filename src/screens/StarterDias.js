@@ -35,16 +35,7 @@ const DaysArea = styled.View`
 
 const Page = (props) => {
 
-    const nextAction = () => {
-        if (!props.name) {
-            alert("Você precisa preencher o campo com seu nome!")
-            return
-        }
-
-        props.navigation.navigate('StarterDias');
-    }
-
-    const toogleDay = (d) => {
+    const toogleDay = (d) => { 
         let newWorkoutDays = [...props.workoutDays];
 
         if (!props.workoutDays.includes(d)) {
@@ -116,7 +107,7 @@ Page.navigationOptions = ({ navigation }) => {
             return
         }
 
-        props.navigation.navigate('StarterNivel');
+        navigation.navigate('StarterNivel');
     }
 
     return {
