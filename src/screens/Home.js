@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { connect } from 'react-redux';
+import { Text } from "react-native";
 
 import HomeMonthScroll from '../components/HomeMonthScroll';
 import HomeDaysScroll from '../components/HomeDaysScroll';
@@ -34,12 +35,20 @@ const LegendBox = styled.View`
 `;
 
 const Page = (props) => {
+    let today = new Date();
+
+    const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
 
     return (
         <Container>
-            <HomeMonthScroll />
+            <HomeMonthScroll
+                selectedMonth={selectedMonth}
+                setSelectedMonth={setSelectedMonth}
+            />
             <HomeDaysScroll />
             <HomeDayStatus />
+
+            <Text>Mês: {selectedMonth}</Text>
 
             <Legend>
                 <LegendText>Legenda:</LegendText>
