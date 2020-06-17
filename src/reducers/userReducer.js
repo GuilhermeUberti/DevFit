@@ -4,7 +4,7 @@ const initialState = {
     workoutDays: [], // 0 - 6 (Semana começa no Domingo)
     myWorkouts: [],
     lastWorkout: '', // ID
-    dailyProgress: ['2019-09-13', '2019-09-12']
+    dailyProgress: ['2020-06-09', '2020-06-08']
 };
 
 export default (state = initialState, action) => {

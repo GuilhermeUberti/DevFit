@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { connect } from 'react-redux';
-import { Text } from "react-native";
 
 import HomeMonthScroll from '../components/HomeMonthScroll';
 import HomeDaysScroll from '../components/HomeDaysScroll';
@@ -38,6 +37,7 @@ const Page = (props) => {
     let today = new Date();
 
     const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
+    const [selectedDay, setSelectedDay] = useState(today.getDate());
 
     return (
         <Container>
@@ -45,10 +45,18 @@ const Page = (props) => {
                 selectedMonth={selectedMonth}
                 setSelectedMonth={setSelectedMonth}
             />
-            <HomeDaysScroll />
+            <HomeDaysScroll
+                selectedMonth={selectedMonth}
+                selectedDay={selectedDay}
+                setSelectedDay={setSelectedDay}
+
+                dailyProgress={props.dailyProgress}
+                workoutDays={props.workoutDays}
+            />
             <HomeDayStatus />
 
-            <Text>Mês: {selectedMonth}</Text>
+            <LegendText>Mês: {selectedMonth}</LegendText>
+            <LegendText>Dia: {selectedDay}</LegendText>
 
             <Legend>
                 <LegendText>Legenda:</LegendText>
@@ -115,7 +123,8 @@ Page.navigationOptions = ({ navigation }) => {
 
 const mapStateToProps = (state) => {
     return {
-
+        dailyProgress: state.userReducer.dailyProgress,
+        workoutDays: state.userReducer.workoutDays
     }
 }
 

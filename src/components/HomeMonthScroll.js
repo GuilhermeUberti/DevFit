@@ -56,7 +56,7 @@ export default (props) => {
     useEffect(() => {
         setTimeout(() => {
             scrollToMonth(selectedMonth);
-        }, 5)
+        }, 10)
     }, [props.selectedMonth]);
 
     return (
